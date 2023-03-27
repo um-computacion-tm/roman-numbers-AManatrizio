@@ -54,9 +54,17 @@ class TestDecimalToRoman(unittest.TestCase):
         resultado = decimal_to_roman(1)
         self.assertEqual(resultado, 'I')
 
+    def test_cuarenta(self):
+        resultado = decimal_to_roman(40)
+        self.assertEqual(resultado, 'XL')  
+
     def test_cincuenta(self):
         resultado = decimal_to_roman(50)
         self.assertEqual(resultado, 'L')
+
+    def test_noventa(self):
+        resultado = decimal_to_roman(90)
+        self.assertEqual(resultado, 'XC')  
 
     def test_cien(self):
         resultado = decimal_to_roman(100)
