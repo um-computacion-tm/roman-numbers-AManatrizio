@@ -5,16 +5,24 @@ def decimal_to_roman(decimal):
         return 'I' * decimal
     elif decimal == 5:
         return 'V'
+    elif decimal == 40:
+        return 'XL'
     elif decimal == 50:
         return 'L'
+    elif decimal == 90:
+        return 'XC'
     elif decimal == 100:
         return 'C'
+    elif decimal == 400:
+        return 'CD'
     elif decimal == 500:
         return 'D'
+    elif decimal == 900:
+        return 'CM'
     elif decimal == 1000:
         return 'M'
-    else:
-        return "X"
+    elif decimal == 10:
+        return 'X'
 
 
 class TestDecimalToRoman(unittest.TestCase):
@@ -58,9 +66,13 @@ class TestDecimalToRoman(unittest.TestCase):
         resultado = decimal_to_roman(500)
         self.assertEqual(resultado, 'D')            
     
+    def test_novecientos(self):
+        resultado = decimal_to_roman(900)
+        self.assertEqual(resultado, 'CM')
+
     def test_mil(self):
         resultado = decimal_to_roman(1000)
-        self.assertEqual(resultado, 'M')  
+        self.assertEqual(resultado, 'M')
 
 
 
