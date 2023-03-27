@@ -5,6 +5,14 @@ def decimal_to_roman(decimal):
         return 'I' * decimal
     elif decimal == 5:
         return 'V'
+    elif decimal == 50:
+        return 'L'
+    elif decimal == 100:
+        return 'C'
+    elif decimal == 500:
+        return 'D'
+    elif decimal == 1000:
+        return 'M'
     else:
         return "X"
 
@@ -33,6 +41,28 @@ class TestDecimalToRoman(unittest.TestCase):
     def test_tres(self):
         resultado = decimal_to_roman(3)
         self.assertEqual(resultado, 'III')
+
+    def test_uno(self):
+        resultado = decimal_to_roman(1)
+        self.assertEqual(resultado, 'I')
+
+    def test_cincuenta(self):
+        resultado = decimal_to_roman(50)
+        self.assertEqual(resultado, 'L')
+
+    def test_cien(self):
+        resultado = decimal_to_roman(100)
+        self.assertEqual(resultado, 'C')  
+
+    def test_quinientos(self):
+        resultado = decimal_to_roman(500)
+        self.assertEqual(resultado, 'D')            
+    
+    def test_mil(self):
+        resultado = decimal_to_roman(1000)
+        self.assertEqual(resultado, 'M')  
+
+
 
 if __name__ == '__main__':
     unittest.main()
